@@ -3,6 +3,7 @@ package VDM;
 
 
 import java.awt.Desktop.Action;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
@@ -13,6 +14,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 
@@ -68,7 +70,7 @@ public class login{
 		  {
 			  System.out.println("i Can't Find!");
 		  } 
-		  
+		   
 		  Thread.sleep(2000);
 		  
 		  open_writebook();
@@ -83,12 +85,27 @@ public class login{
 		  {
 			  Actions a = new Actions (d);
 			  a.moveToElement(elem1).click(elem1).build().perform();
-			  System.out.println("Writebook is created");
+			  System.out.println("Writebook is opened");
 		 }
 		  else
 		  {
 			  System.out.println("Fail");  
 		  }
+		  
+		  create_writebook();
    }
 	
+public void create_writebook()
+{
+	WebDriverWait create = new WebDriverWait(d, 10);
+	WebElement ele = create.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//select[@id='o_field_input_64']")));
+	
+	Select s1 = new  Select(ele);
+	
+	if(ele.isDisplayed())
+	{
+		s1.selectByIndex(0);
+	}
+	
+}
 }
