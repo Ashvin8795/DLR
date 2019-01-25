@@ -141,6 +141,7 @@ public void create_writebook() throws StaleElementReferenceException, Interrupte
 	}	
 	
 	//changing the status---> locate
+	
 	 WebDriverWait wait = new WebDriverWait(d, 10);
      WebElement edit = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@class='o_form_buttons_view']/child::button[@class='btn btn-primary o_form_button_edit']")));
 
@@ -200,6 +201,7 @@ public void create_writebook() throws StaleElementReferenceException, Interrupte
 		
 	}
 	//changing the status---> Factory order
+	
 	 WebDriverWait wait2 = new WebDriverWait(d, 10);
     WebElement edit2 = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@class='o_form_buttons_view']/child::button[@class='btn btn-primary o_form_button_edit']")));
 
@@ -228,7 +230,8 @@ public void create_writebook() throws StaleElementReferenceException, Interrupte
 		System.out.println(message3);
 		
 	}
-	//changing the status---> locate secured               
+	//changing the status---> locate secured  
+	
 	    WebDriverWait wait3 = new WebDriverWait(d, 10);
 	    WebElement edit3 = wait3.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@class='o_form_buttons_view']/child::button[@class='btn btn-primary o_form_button_edit']")));
 
@@ -256,7 +259,6 @@ public void create_writebook() throws StaleElementReferenceException, Interrupte
 		{
 			Thread.sleep(4000);
 			System.out.println(message4);
-			
 		}   
 		
 		
